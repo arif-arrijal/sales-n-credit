@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.rijal.salesandcredit.module.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_transactionListSales"
+            app:destination="@id/transactionListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_transactionListCapitalInjection"
+            app:destination="@id/transactionListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_personListFragment"
+            app:destination="@id/personListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_listItemFragment"
+            app:destination="@id/listItemFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addPersonFragment"
+            app:destination="@id/addPersonFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_capitalInjectionListFragment"
+            app:destination="@id/capitalInjectionListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_costListFragment"
+            app:destination="@id/costListFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_reportFragment"
+            app:destination="@id/reportFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_zakatFragment"
+            app:destination="@id/zakatFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_savingFragment"
+            app:destination="@id/savingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionListFragment"
+        android:name="com.rijal.salesandcredit.module.transaction.TransactionListFragment"
+        android:label="fragment_transaction_list"
+        tools:layout="@layout/fragment_transaction_list" >
+        <action
+            android:id="@+id/action_transactionListFragment_to_transactionDetailFragment"
+            app:destination="@id/transactionDetailFragment"/>
+        <action
+            android:id="@+id/action_transactionListFragment_to_invoiceListFragment"
+            app:destination="@id/invoiceListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionDetailFragment"
+        android:name="com.rijal.salesandcredit.module.transaction.TransactionDetailFragment"
+        android:label="fragment_transaction_detail"
+        tools:layout="@layout/fragment_transaction_detail" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/personListFragment"
+        android:name="com.rijal.salesandcredit.module.person.PersonListFragment"
+        android:label="PersonListFragment" >
+        <action
+            android:id="@+id/action_personListFragment_to_addPersonFragment"
+            app:destination="@id/addPersonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPersonFragment"
+        android:name="com.rijal.salesandcredit.module.person.AddPersonFragment"
+        android:label="AddPersonFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/listItemFragment"
+        android:name="com.rijal.salesandcredit.module.item.ItemListFragment"
+        android:label="ListItemFragment" >
+        <action
+            android:id="@+id/action_listItemFragment_to_addItemFragment"
+            app:destination="@id/addItemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addItemFragment"
+        android:name="com.rijal.salesandcredit.module.item.AddItemFragment"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/capitalInjectionListFragment"
+        android:name="com.rijal.salesandcredit.module.transaction.CapitalInjectionListFragment"
+        android:label="CapitalInjectionListFragment" >
+        <action
+            android:id="@+id/action_capitalInjectionListFragment_to_capitalInjectionDetailFragment"
+            app:destination="@id/capitalInjectionDetailFragment" />
+        <action
+            android:id="@+id/action_capitalInjectionListFragment_to_invoiceListFragment"
+            app:destination="@id/invoiceListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/capitalInjectionDetailFragment"
+        android:name="com.rijal.salesandcredit.module.transaction.CapitalInjectionDetailFragment"
+        android:label="CapitalInjectionDetailFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/invoiceListFragment"
+        android:name="com.rijal.salesandcredit.module.invoice.InvoiceListFragment"
+        android:label="fragment_invoice_list"
+        tools:layout="@layout/fragment_invoice_list" >
+        <action
+            android:id="@+id/action_invoiceListFragment_to_generateInvoiceFragment"
+            app:destination="@id/generateInvoiceFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/generateInvoiceFragment"
+        android:name="com.rijal.salesandcredit.module.invoice.GenerateInvoiceFragment"
+        android:label="GenerateInvoiceFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="transactionId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/costListFragment"
+        android:name="com.rijal.salesandcredit.module.cost.CostListFragment"
+        android:label="CostListFragment" >
+        <action
+            android:id="@+id/action_costListFragment_to_addCostFragment"
+            app:destination="@id/addCostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addCostFragment"
+        android:name="com.rijal.salesandcredit.module.cost.AddCostFragment"
+        android:label="fragment_add_cost"
+        tools:layout="@layout/fragment_add_cost" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.rijal.salesandcredit.module.report.ReportFragment"
+        android:label="ReportFragment" />
+    <fragment
+        android:id="@+id/zakatFragment"
+        android:name="com.rijal.salesandcredit.module.zakat.ZakatFragment"
+        android:label="ZakatFragment" />
+    <fragment
+        android:id="@+id/savingFragment"
+        android:name="com.rijal.salesandcredit.module.savings.SavingFragment"
+        android:label="SavingFragment" />
+</navigation>

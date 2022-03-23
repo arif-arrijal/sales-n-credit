@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="com.rijal.salesandcredit.helpers.DataBindingConverter"/>
+        <variable
+            name="model"
+            type="com.rijal.salesandcredit.db.entity.TransactionWithItems" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:elevation="3dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true"
+        android:layout_margin="4dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    style="@style/Subtitle2SemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/secondary_variant"
+                    android:text="@{model.transactionNo}"
+                    tools:text="2Zxm2"/>
+
+                <TextView
+                    style="@style/Subtitle1SemiBold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.name}"
+                    tools:text="Arif"/>
+
+                <TextView
+                    style="@style/Body2Regular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/grey_700"
+                    android:text="@{DataBindingConverter.dateToStringDate(model.installmentPaymentDate) + ` - ` + DataBindingConverter.dateToStringDate(model.paymentDueDate)}"
+                    tools:text="22 Jan 2021 - 23 Jan 2021"/>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            style="@style/Caption1Medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Nilai Transaksi"/>
+
+                        <TextView
+                            style="@style/Subtitle1SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/blue_700"
+                            app:textCurrency="@{model.nilaiTransaksi}"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            style="@style/Caption1Medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total Terbayar"/>
+
+                        <TextView
+                            style="@style/Subtitle1SemiBold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/blue_700"
+                            app:textCurrency="@{model.totalTerbayar}"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/blue_700"
+                        app:cardCornerRadius="20dp">
+
+                        <TextView
+                            style="@style/Caption1Medium"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Baik"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginTop="4dp"
+                            android:textColor="@color/white"
+                            android:layout_marginBottom="4dp"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@drawable/dotted_line"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:padding="12dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_invoice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <TextView
+                        style="@style/Subtitle2SemiBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Lihat Tagihan"
+                        android:textColor="@color/primary_variant"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"/>
+                </com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cv_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="38dp"
+                    app:cardCornerRadius="12dp"
+                    android:backgroundTint="@color/primary"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <TextView
+                        style="@style/Subtitle2SemiBold"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Lihat Detail"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="6dp"/>
+                </com.google.android.material.card.MaterialCardView>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

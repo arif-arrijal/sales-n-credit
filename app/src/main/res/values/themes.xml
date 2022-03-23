@@ -1,0 +1,187 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.SalesAndCredit" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppThemeNoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/blue_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/yellow_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+
+    <style name="DefaultButton">
+        <item name="backgroundTint">@color/primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="fontFamily">@font/cabin_semibold</item>
+    </style>
+
+    <style name="DefaultTextInputLayout">
+        <item name="boxBackgroundColor">@color/white</item>
+        <item name="expandedHintEnabled">false</item>
+    </style>
+
+    <style name="DefaultEditText">
+        <item name="android:importantForAutofill" tools:targetApi="o">no</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:paddingTop">32dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="UnclickableEditText" parent="DefaultEditText">
+        <item name="android:cursorVisible">false</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+    </style>
+
+
+    <style name="EditTextDate" parent="UnclickableEditText">
+        <item name="android:inputType">date</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+    </style>
+
+    <style name="EditTextPrice" parent="DefaultEditText">
+        <item name="android:inputType">numberDecimal</item>
+    </style>
+
+    <style name="ClickableCard">
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="CardPrimary" parent="ClickableCard">
+        <item name="android:backgroundTint">@color/primary</item>
+        <item name="cardCornerRadius">6dp</item>
+    </style>
+
+    <style name="TextCardPrimary" parent="Subtitle2SemiBold">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginEnd">12dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
+    <style name="CardOutlinePrimary" parent="ClickableCard">
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="cardCornerRadius">6dp</item>
+    </style>
+
+
+    <style name="TextCardOutlinePrimary" parent="TextCardPrimary">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:layout_marginEnd">12dp</item>
+        <item name="android:layout_marginTop">6dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+    </style>
+
+    <style name="LayoutLinearLayoutHorizontal">
+        <item name="android:orientation">horizontal</item>
+        <item name="divider">@drawable/divider_transparent_horizontal_md</item>
+        <item name="showDividers">middle</item>
+    </style>
+
+    <!--Cabin Semi Bold-->
+    <style name="Headline6SemiBold">
+        <item name="fontFamily">@font/cabin_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Subtitle1SemiBold">
+        <item name="fontFamily">@font/cabin_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Subtitle2SemiBold">
+        <item name="fontFamily">@font/cabin_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Cabin Bold-->
+    <style name="Headline6Bold">
+        <item name="fontFamily">@font/cabin_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Subtitle1Bold">
+        <item name="fontFamily">@font/cabin_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Subtitle2Bold">
+        <item name="fontFamily">@font/cabin_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Roboto Regular-->
+    <style name="Body1Regular">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Body2Regular">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Caption1Regular">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Overline1Regular">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--Roboto Medium-->
+    <style name="Body1Medium">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Body2Medium">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Caption1Medium">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Overline1Medium">
+        <item name="fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+</resources>

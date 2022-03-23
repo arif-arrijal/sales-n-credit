@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.rijal.salesandcredit.helpers.DataBindingConverter"/>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.rijal.salesandcredit.module.invoice.InvoiceViewModel" />
+    </data>
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:divider="@drawable/divider_transparent_vertical"
+                app:showDividers="middle">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:visibility="@{viewModel.selectedTransaction == null ? View.GONE : View.VISIBLE}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="10dp"
+                    android:elevation="3dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+                                <TextView
+                                    style="@style/Subtitle2SemiBold"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:textAlignment="textEnd"
+                                    android:text="@{viewModel.selectedTransaction.transactionNo}"
+                                    tools:text="2Zxm2"/>
+                                <TextView
+                                    android:id="@+id/cv_status"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginStart="4dp">
+                                </TextView>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+
+                            <TextView
+                                style="@style/Subtitle1SemiBold"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@{viewModel.selectedTransaction.name}"
+                                tools:text="Arif"/>
+
+                            <TextView
+                                style="@style/Body2Regular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/grey_700"
+                                android:text="@{DataBindingConverter.dateToStringDate(viewModel.selectedTransaction.installmentPaymentDate) + ` - ` + DataBindingConverter.dateToStringDate(viewModel.selectedTransaction.paymentDueDate)}"
+                                tools:text="22 Jan 2021 - 23 Jan 2021"/>
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginBottom="6dp">
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        style="@style/Caption1Medium"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Nilai Transaksi"/>
+
+                                    <TextView
+                                        style="@style/Subtitle1SemiBold"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/blue_700"
+                                        app:textCurrency="@{viewModel.selectedTransaction.nilaiTransaksi}"/>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <androidx.appcompat.widget.LinearLayoutCompat
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+                                    <TextView
+                                        style="@style/Caption1Medium"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="Total Terbayar"/>
+
+                                    <TextView
+                                        style="@style/Subtitle1SemiBold"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:textColor="@color/blue_700"
+                                        app:textCurrency="@{viewModel.selectedTransaction.totalTerbayar}"/>
+                                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:visibility="gone"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:backgroundTint="@color/blue_700"
+                                    app:cardCornerRadius="20dp">
+
+                                    <TextView
+                                        style="@style/Caption1Medium"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Baik"
+                                        android:layout_marginStart="12dp"
+                                        android:layout_marginEnd="12dp"
+                                        android:layout_marginTop="4dp"
+                                        android:textColor="@color/white"
+                                        android:layout_marginBottom="4dp"/>
+
+                                </com.google.android.material.card.MaterialCardView>
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/DefaultTextInputLayout"
+                    android:id="@+id/til_total_installment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Besar Pembayaran">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_total_installment"
+                        style="@style/DefaultEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/DefaultTextInputLayout"
+                    android:id="@+id/til_installment_at"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Angsuran Ke">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_installment_at"
+                        style="@style/EditTextPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/DefaultTextInputLayout"
+                    android:id="@+id/til_maximum_due_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Pembayaran Maksimal Tanggal">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_maximum_due_date"
+                        style="@style/EditTextDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.maximumDueDate}"
+                        android:inputType="date"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/DefaultTextInputLayout"
+                    android:id="@+id/til_payment_due_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Jatuh Tempo Pelunasan">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_payment_due_date"
+                        style="@style/EditTextDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.invoiceDueDate}"
+                        android:inputType="date"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/DefaultTextInputLayout"
+                    android:visibility="@{viewModel.id > 0 ? View.VISIBLE : View.GONE}"
+                    android:id="@+id/til_input_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal Input">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_input_date"
+                        style="@style/EditTextDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@{viewModel.inputDate}"
+                        android:inputType="date"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/DefaultTextInputLayout"
+                    android:visibility="@{viewModel.id > 0 ? View.VISIBLE : View.GONE}"
+                    android:id="@+id/til_jumlah_terbayar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Besar Pembayaran">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_jumlah_terbayar"
+                        style="@style/DefaultEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/DefaultTextInputLayout"
+                    android:visibility="@{viewModel.id > 0 ? View.VISIBLE : View.GONE}"
+                    android:id="@+id/til_remaining_unpaid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Sisa yang belum di bayar">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_remaining_unpaid"
+                        android:enabled="false"
+                        style="@style/EditTextPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            app:cardCornerRadius="32dp"
+            android:layout_margin="12dp"
+            app:cardBackgroundColor="@color/primary"
+            android:layout_gravity="center"
+            android:id="@+id/cv_add">
+            <TextView
+                android:id="@+id/tv_add"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="Tambah"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto"/>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

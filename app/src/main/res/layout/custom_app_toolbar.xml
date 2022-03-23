@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    app:contentInsetStart="0dp"
+    app:contentInsetLeft="0dp"
+    android:elevation="4dp"
+    android:background="@color/white">
+
+    <ImageButton
+        android:id="@+id/ib_back"
+        android:layout_width="35dp"
+        android:layout_height="match_parent"
+        android:background="@color/transparent"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:src="@drawable/ic_baseline_arrow_back_24"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:fontFamily="@font/cabin_bold"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:text="Judul"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+</androidx.appcompat.widget.Toolbar>

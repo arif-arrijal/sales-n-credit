@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.rijal.salesandcredit.module.zakat.ZakatViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_50"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                android:elevation="3dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="8dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="12dp">
+
+                    <TextView
+                        style="@style/Subtitle1Bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="@color/primary_variant"
+                        android:text="@{viewModel.titleShodaqoh}"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Body2Regular"
+                            android:text="Laba Kotor"/>
+
+                        <TextView
+                            style="@style/Body2Medium"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalUntungBulanIni}"
+                            tools:text="Rp 30000"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Body2Regular"
+                            android:text="Biaya lain-lain"/>
+
+                        <TextView
+                            style="@style/Body2Medium"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalBiayaBulanIni}"
+                            tools:text="Rp 30000"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="6dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Body2Regular"
+                            android:text="Laba Bersih"/>
+
+                        <TextView
+                            style="@style/Body2Medium"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.labaBersihBulanIni}"
+                            tools:text="Rp 30000"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/dotted_line"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Body2Regular"
+                            android:text="Shodaqoh 10%"/>
+
+                        <TextView
+                            style="@style/Body2Medium"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.shodaqoh}"
+                            android:textColor="@color/primary_variant"
+                            tools:text="Rp 30000"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                android:elevation="3dp"
+                app:cardElevation="3dp"
+                app:cardCornerRadius="8dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="12dp">
+
+                    <TextView
+                        style="@style/Subtitle1Bold"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:textColor="@color/primary_variant"
+                        android:text="@{viewModel.titleZakat}"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Body2Regular"
+                            android:text="Total Aset"/>
+
+                        <TextView
+                            style="@style/Body2Medium"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalAset}"
+                            tools:text="Rp 30000"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Body2Regular"
+                            android:text="Total Tabungan"/>
+
+                        <TextView
+                            style="@style/Body2Medium"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalTabungan}"
+                            tools:text="Rp 30000"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Body2Regular"
+                            android:text="Aset + Tabungan"/>
+
+                        <TextView
+                            style="@style/Body2Medium"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalTabungan + viewModel.totalAset}"
+                            tools:text="Rp 30000"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginBottom="4dp"
+                        android:background="@drawable/dotted_line"/>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/Body2Regular"
+                            android:text="Zakat 2.5%"/>
+
+                        <TextView
+                            style="@style/Body2Medium"
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:textAlignment="textEnd"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary_variant"
+                            app:textCurrency="@{viewModel.zakat}"
+                            tools:text="Rp 30000"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

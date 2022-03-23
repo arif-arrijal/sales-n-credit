@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.rijal.salesandcredit.module.report.ReportViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_50">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardUseCompatPadding="true"
+                app:cardCornerRadius="8dp"
+                android:layout_margin="6dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    app:divider="@drawable/divider_transparent_vertical"
+                    app:showDividers="middle"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Caption1Medium"
+                            android:text="Total Modal"/>
+
+                        <TextView
+                            style="@style/Body1Regular"
+                            android:textColor="@color/primary_variant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalModal}"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Caption1Medium"
+                            android:text="Total Untung"/>
+
+                        <TextView
+                            style="@style/Body1Regular"
+                            android:textColor="@color/primary_variant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalUntung}"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Caption1Medium"
+                            android:text="Total Aset"/>
+
+                        <TextView
+                            style="@style/Body1Regular"
+                            android:textColor="@color/primary_variant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalAset}"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Caption1Medium"
+                            android:text="Total Tertagih"/>
+
+                        <TextView
+                            style="@style/Body1Regular"
+                            android:textColor="@color/primary_variant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalTertagih}"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            style="@style/Caption1Medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Total Biaya"/>
+
+                        <TextView
+                            style="@style/Body1Regular"
+                            android:textColor="@color/primary_variant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.totalBiaya}"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            style="@style/Caption1Medium"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Laba Bersih"/>
+
+                        <TextView
+                            style="@style/Body1Regular"
+                            android:textColor="@color/primary_variant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:textCurrency="@{viewModel.keuntunganBersih}"/>
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.cardview.widget.CardView>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</layout>
